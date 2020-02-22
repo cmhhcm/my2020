@@ -197,7 +197,7 @@ public class Java8Test {
      * 第五章 8道练习题
      */
     @Test
-    public void eightPractis() {
+    public void eightPractices() {
         Trader raoul = new Trader("Raoul", "Cambridge");
         Trader mario = new Trader("Mario", "Milan");
         Trader alan = new Trader("Alan", "Cambridge");
@@ -211,7 +211,17 @@ public class Java8Test {
                 new Transaction(alan, 2012, 950)
         );
 
-        //1)
+        /**
+         * 1)
+         */
+        List<Transaction> transSortedByYearAsc = transactions.stream()
+                .filter(e -> e.getYear() == 2011)
+                .sorted()
+                .collect(toList());
+        transSortedByYearAsc.forEach(e -> {
+            System.out.println(e);
+        });
+
     }
 
     /**
