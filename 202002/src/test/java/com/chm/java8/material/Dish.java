@@ -35,7 +35,6 @@ public class Dish {
 
     public enum Type {MEAT, FISH, OTHER}
 
-
     @Override
     public String toString() {
         return name;
@@ -51,4 +50,10 @@ public class Dish {
                     new Dish("pizza", true, 550, Dish.Type.OTHER),
                     new Dish("prawns", false, 400, Dish.Type.FISH),
                     new Dish("salmon", false, 450, Dish.Type.FISH));
+
+    enum CaloricLevel {
+        DIET,//低热量 <400
+        NORMAL,// 普通 400-700
+        FAT,//高热量 >700
+    }
 }
