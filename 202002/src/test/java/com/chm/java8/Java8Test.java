@@ -8,13 +8,9 @@ import org.junit.Test;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Collection;
-
-import static java.util.Comparator.comparing;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.OptionalInt;
@@ -23,6 +19,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static com.chm.java8.material.Dish.menu;
+import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toSet;
 
@@ -321,7 +318,7 @@ public class Java8Test {
         int sumCalories2 = menu.stream()
                 .mapToInt(Dish::getCalories)
                 .sum();
-        OptionalInt maxCalories= menu.stream()
+        OptionalInt maxCalories = menu.stream()
                 .mapToInt(Dish::getCalories)
                 .max();
 
@@ -336,7 +333,7 @@ public class Java8Test {
         Stream<Object> empty = Stream.empty();
 
         //由数组创建流
-        int[] numbers = {1,3,455,5,55};
+        int[] numbers = {1, 3, 455, 5, 55};
         int sumSream = Arrays.stream(numbers).sum();
         System.out.println(sumSream);
 
@@ -344,16 +341,16 @@ public class Java8Test {
         try {
             long uniqueWords = 0;
             Stream<String> lines = Files.lines(Paths.get("data.txt"), Charset.defaultCharset());
-            uniqueWords  = lines.flatMap(line -> Arrays.stream(line.split("")))
-                     .distinct()
-                     .count();
+            uniqueWords = lines.flatMap(line -> Arrays.stream(line.split("")))
+                    .distinct()
+                    .count();
             System.out.println(uniqueWords);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         //函数生成流
-        Stream.iterate(0,n-> n+2)
+        Stream.iterate(0, n -> n + 2)
                 .limit(3)
                 .forEach(System.out::println);
         //斐波那契数列
@@ -364,7 +361,6 @@ public class Java8Test {
         Stream.generate(Math::random)
                 .limit(20)
                 .forEach(System.out::println);
-
 
     }
 
