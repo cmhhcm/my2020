@@ -1,8 +1,11 @@
 package com.chm.foundation;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Author:meice Huang
@@ -98,18 +101,48 @@ public class CoreJavaVolumeOne {
         }
         System.out.println("Min:" + array[min]);
     }
-    public void testSortLess(Integer[] array){
-        for(int i=0;i<array.length;i++){
+
+    public void testSortLess(Integer[] array) {
+        for (int i = 0; i < array.length; i++) {
             int min = 0;
-            for(int j=i+1;j<array.length;j++){
-                if(array[j]<array[i]){
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[i]) {
                     min = j;
                 }
             }
             int temp = array[i];
             array[i] = array[min];
 
-
         }
     }
+
+    @Test
+    public void testForEach() {
+        List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5);
+        integers.forEach(e -> {
+            if (e == 3) {
+                return;
+            }
+            if (e == 4) {
+                System.out.println("4");
+            }
+        });
+
+        Set<String> set = new HashSet<>();
+        set.add(null);
+        System.out.println(set.toString());
+
+        for (int i = 0; i < 5; i++) {
+            if (i == 3) {
+                return;
+            }
+            if (i == 4) {
+                System.out.println("走到这里了>..");
+            }
+        }
+    }
+    /**
+     * forEach中使用return不会中断程序，只会结束当前循环，继续下一次循环，类似continue的作用。
+     * forEach中无法使用break和continue.
+     */
 }

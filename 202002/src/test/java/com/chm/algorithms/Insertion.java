@@ -1,13 +1,14 @@
 package com.chm.algorithms;
 
+import static com.chm.algorithms.Example.exch;
+import static com.chm.algorithms.Example.less;
+import static com.chm.algorithms.Example.show;
+
 /**
  * Author:meice Huang
  * Time: 2020/2/26 上午7:33
  */
 
-import org.junit.Test;
-
-import static com.chm.algorithms.Example.*;
 
 public class Insertion {
     /**
@@ -23,7 +24,6 @@ public class Insertion {
         show(a);
     }
 
-    @Test
     public void testInsertionSort() {
         sort(new Comparable[]{12, 345, 98, 3, 987, 1234, -9, 23});
     }

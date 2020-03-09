@@ -2,7 +2,7 @@ package com.chm.java8;
 
 import com.chm.java8.material.CaloricLevel;
 import com.chm.java8.material.Dish;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Comparator;
 import java.util.IntSummaryStatistics;

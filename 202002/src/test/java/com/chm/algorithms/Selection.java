@@ -5,7 +5,6 @@ package com.chm.algorithms;
  * Time: 2020/2/26 上午5:34
  */
 
-import org.junit.Test;
 
 import static com.chm.algorithms.Example.exch;
 import static com.chm.algorithms.Example.less;
@@ -37,7 +36,6 @@ public class Selection {
      *
      * 算法效率：对于长度为N的数组，需要大约N^2/2次比较和N次交换
      */
-    @Test
     public void testAscSelectionSorted() {
         sort(new Comparable[]{12, 345, 98, 3, 987, 1234, -9, 23});
     }

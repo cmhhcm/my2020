@@ -3,7 +3,7 @@ package com.chm.java8;
 import com.chm.java8.material.Dish;
 import com.chm.java8.material.Trader;
 import com.chm.java8.material.Transaction;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -392,5 +392,40 @@ public class Java8Test {
                 .reduce(Integer::sum);
 
     }
+
+    @Test
+    public void reTestFlatMap(){
+        String[] words = {"Hello","World"};
+        List<String[]> collect = Arrays.stream(words)
+                .map(word -> word.split(""))
+                .distinct()
+                .collect(toList());
+
+        List<String> collect1 = Arrays.stream(words)
+                .map(word -> word.split(""))
+                .flatMap(Arrays::stream)
+                .distinct()
+                .collect(toList());
+
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        List<Integer> result = numbers.stream()
+                .map(each -> each * each)
+                .collect(toList());
+        result.stream()
+                .forEach(System.out::println);
+
+        List<Integer> number1 = Arrays.asList(1, 2, 3);
+        List<Integer> number2 = Arrays.asList(3, 4);
+        List<Stream<int[]>> collect2 = number1.stream()
+                .map(n1 -> number2.stream().map(n2 -> new int[]{n1, n2}))
+                .collect(toList());
+        List<int[]> collect3 = number1.stream()
+                .flatMap(n1 -> number2.stream().map(n2 -> new int[]{n1, n2}))
+                .collect(toList());
+        collect3.stream()
+                .forEach(System.out::print);
+
+    }
+
 
 }
