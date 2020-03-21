@@ -3,18 +3,23 @@ package com.chm.java8;
 import com.chm.java8.material.Dish;
 import com.chm.java8.material.Trader;
 import com.chm.java8.material.Transaction;
+import edu.princeton.cs.algs4.In;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.OptionalInt;
 import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -425,6 +430,20 @@ public class Java8Test {
         collect3.stream()
                 .forEach(System.out::print);
 
+    }
+
+    @Test
+    public void testToMap(){
+        List<String> list = new ArrayList<>();
+        Map<String, String> result = list.stream()
+                .collect(Collectors.toMap(e -> e, e -> e));
+
+        Map<String,Integer> map = new HashMap<>();
+        map.put(null,null);
+        map.forEach((k,v) -> {
+            System.out.println(k);
+            System.out.println(v);
+        });
     }
 
 

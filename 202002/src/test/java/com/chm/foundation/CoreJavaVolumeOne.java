@@ -3,8 +3,10 @@ package com.chm.foundation;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -12,6 +14,16 @@ import java.util.Set;
  * Time: 2020/2/22 下午2:59
  */
 public class CoreJavaVolumeOne {
+
+
+    private Map<String,String> map2 = new HashMap<>();
+    private Map<String,String> map = new HashMap<String,String>(){
+        {
+            put("gender","性别");
+        }
+    };
+
+
     /**
      * 选择排序
      */
@@ -145,4 +157,9 @@ public class CoreJavaVolumeOne {
      * forEach中使用return不会中断程序，只会结束当前循环，继续下一次循环，类似continue的作用。
      * forEach中无法使用break和continue.
      */
+
+    public void testMap(){
+        CoreJavaVolumeOne one = new CoreJavaVolumeOne(){};
+        CoreJavaVolumeOne one1 = new CoreJavaVolumeOne();
+    }
 }
