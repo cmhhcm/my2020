@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Reading List</title>
+</head>
+<body>
+<h2>书单列表</h2>
+<div th:unless="${#lists.isEmpty(books)}">
+    <dl th:each="book: ${books}">
+        <dt class="bookHeadline">
+            <span th:text="${book.title}">书名</span> by
+            <span th:text="${book.author}">作者</span>
+            (ISBN: <span th:text="${book.isbn}">ISBN</span>)
+        </dt>
+        <dd class="bookDescription">
+                <span th:if="${book.description}"
+                      th:text="${book.description}">描述</span>
+            <span th:if="${book.description eq null}">暂无描述</span>
+        </dd>
+
+    </dl>
+
+</div>
+<div th:if="${#lists.isEmpty(books)}">
+
+    <p>暂无书单</p>
+</div>
+
+<hr/>
+
+<h3>新增一本书</h3>
+<form method="post">
+    <label for="title">书名:</label>
+    <input type="text" name="title" size="50"> </input><br/>
+
+    <label for="author">作者:</label>
+    <input type="text" name="author" size="50"></input><br/>
+
+    <label for="description">描述:</label><br/>
+    <textarea name="description" cols="80" rows="5"></textarea><br/>
+    <input type="submit">
+
+</form>
+</body>
+</html>
