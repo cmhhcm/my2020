@@ -1,8 +1,8 @@
 package com.cmh.readinglist;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+//import org.springframework.security.core.GrantedAuthority;
+//import org.springframework.security.core.authority.SimpleGrantedAuthority;
+//import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,24 +13,26 @@ import java.util.Collection;
  * @author:hmc
  * @date: 2020/3/24 上午7:14
  */
-@Entity
-public class Reader implements UserDetails {
 
-    @Id
+//@Entity  implements UserDetails
+public class Reader {
+
+   /* @Id
     private String username;
     private String fullname;
     private String password;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Arrays.asList(new SimpleGrantedAuthority("READER"));//授予READER权限
+        return Arrays.asList(new SimpleGrantedAuthority("READER"),new SimpleGrantedAuthority("ADD"));//授予READER权限
     }
 
-    /**
+*//**
      * 不过期
      * 不加锁
      * 不禁用
-     */
+     *//*
+
     @Override
     public boolean isAccountNonExpired() {
         return true;
@@ -75,6 +77,6 @@ public class Reader implements UserDetails {
 
     public void setFullname(String fullname) {
         this.fullname = fullname;
-    }
+    }*/
 
 }

@@ -1,5 +1,0 @@
-spring:
-  main:
-    show-banner:false
-sever.port:
-  port:8000
