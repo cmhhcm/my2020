@@ -1,0 +1,25 @@
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    url: jdbc:mysql://localhost/readinglist
+    username: root
+    password: 12345678
+
+server:
+  port: 8443
+  ssl:
+    key-store: file:////Users/dzj/myIdeaTest/my2020/myspringboot_gradle/mykeys.jks
+    key-store-password: 123456
+    key-password: 123456
+
+logging:
+  file:
+    path: /var/log/
+    name: BookWorm.log
+  level:
+      root: info
+      org.springframework.security: info
+
+
+
