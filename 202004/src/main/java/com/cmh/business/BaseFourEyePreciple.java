@@ -1,24 +1,31 @@
+/*
 package com.cmh.business;
 
-import org.joda.time.DateTime;
+//import org.joda.time.DateTime;
 
 import java.io.Serializable;
 
+*/
 /**
  * @author:起舞的日子
  * @date: 2020/4/10 上午7:19
- */
+ *//*
+
 public abstract class BaseFourEyePreciple implements Serializable {
 
     public void apply(String submitter, String auditor, DateTime submittedTime, int fourEyeHours) {
-        /**
+        */
+/**
          * 是否可操作
-         */
+         *//*
+
          boolean operable;
 
-        /**
+        */
+/**
          * 不可操作原因
-         */
+         *//*
+
          String notOperableReason;
 
         if (!submitter.equals(auditor)) {
@@ -38,3 +45,4 @@ public abstract class BaseFourEyePreciple implements Serializable {
 
     }
 }
+*/

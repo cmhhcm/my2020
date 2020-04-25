@@ -1,5 +1,6 @@
-package com.cmh.algorithm;
+package com.cmh.algorithm.graph;
 
+import com.cmh.algorithm.graph.Graph;
 import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.Stack;
 

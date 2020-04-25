@@ -1,4 +1,6 @@
-package com.cmh.algorithm;
+package com.cmh.algorithm.graph;
+
+import com.cmh.algorithm.graph.Graph;
 
 /**
  * G是无环图嘛？(假设不存在自环或平行边)

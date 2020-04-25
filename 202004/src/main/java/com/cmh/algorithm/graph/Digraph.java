@@ -1,55 +1,33 @@
-package com.cmh.algorithm;
+package com.cmh.algorithm.graph;
 
 import edu.princeton.cs.algs4.Bag;
 import edu.princeton.cs.algs4.In;
 
 /**
- * Graph 数据类型
- * 无向图数据结构
+ * 有向图的数据类型
  * Author:起舞的日子
- * Date:  2020/4/19 下午11:01
+ * Date:  2020/4/25 上午10:55
  */
-public class Graph {
-    /**
-     * 顶点数目
-     */
+public class Digraph {
     private final int V;
-
-    /**
-     * 边的数目
-     */
     private int E;
-
-    /**
-     * 邻接表
-     */
     private Bag<Integer>[] adj;
 
-    public Graph(int V) {
+    public Digraph(int V) {
         this.V = V;
         this.E = 0;
         adj = new Bag[V];
-        /*
-        将所有链表初始化为空
-         */
         for (int v = 0; v < V; v++) {
             adj[v] = new Bag<>();
         }
     }
 
-    public Graph(In in) {
-        /*
-        读取V并将图初始化
-         */
+    public Digraph(In in) {
         this(in.readInt());
         int E = in.readInt();
         for (int i = 0; i < E; i++) {
-            //添加一条边
-            //读取一个顶点
             int v = in.readInt();
-            //读取另一个顶点
             int w = in.readInt();
-            //添加一条连接它们的边
             addEdge(v, w);
         }
     }
@@ -63,15 +41,28 @@ public class Graph {
     }
 
     public void addEdge(int v, int w) {
-        //将w添加到v的链表中
         adj[v].add(w);
-        //将v添加到w的链表中
-        adj[w].add(v);
         E++;
     }
 
     public Iterable<Integer> adj(int v) {
-        return adj(v);
+        return adj[v];
     }
 
+    /**
+     * 有向图的取反
+     * 返回有向图的一个副本，但将其中所有的边的方向反转
+     * 作用：用例可以找出"指向"每个顶点的所有边
+     *
+     * @return
+     */
+    public Digraph reverse() {
+        Digraph R = new Digraph(V);
+        for (int v = 0; v < V; v++) {
+            for (int w : adj[v]) {
+                R.addEdge(w, v);
+            }
+        }
+        return R;
+    }
 }

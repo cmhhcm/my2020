@@ -1,4 +1,6 @@
-package com.cmh.algorithm;
+package com.cmh.algorithm.graph;
+
+import com.cmh.algorithm.graph.Graph;
 
 /**
  * G是二分图嘛？(双色问题)

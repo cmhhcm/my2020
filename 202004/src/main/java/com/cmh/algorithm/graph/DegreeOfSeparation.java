@@ -1,4 +1,4 @@
-package com.cmh.algorithm;
+package com.cmh.algorithm.graph;
 
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;

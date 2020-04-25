@@ -1,4 +1,6 @@
-package com.cmh.algorithm;
+package com.cmh.algorithm.graph;
+
+import com.cmh.algorithm.graph.Graph;
 
 /**
  * 使用深度优先搜索找出图中的所有连通分量
