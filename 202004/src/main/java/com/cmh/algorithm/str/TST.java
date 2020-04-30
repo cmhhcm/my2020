@@ -6,9 +6,13 @@ package com.cmh.algorithm.str;
  * Date:  2020/4/29 08:34
  */
 public class TST<Value> {
-    private Node root;
+    private Node<Value> root;
 
-    private class Node {
+    public TST() {
+
+    }
+
+    private static class Node<Value> {
         /**
          * 字符
          */
@@ -16,7 +20,7 @@ public class TST<Value> {
         /**
          * 左中右子三向单词查找树
          */
-        Node left, mid, right;
+        Node<Value> left, mid, right;
 
         /**
          * 和字符串相关联的值
@@ -75,4 +79,31 @@ public class TST<Value> {
      * 1、每个结点只含有三个链接，所需空间远小于单词查找树
      * 2、适用于非随机的键
      */
+
+    public String longestPrefixOf(String query) {
+        if (query == null) {
+            throw new IllegalArgumentException("calls longestPrefixOf() with null argument ");
+        }
+        if (query.length() == 0) {
+            return null;
+        }
+        int length = 0;
+        Node<Value> x = root;
+        int i = 0;
+        while (x != null && i < query.length()) {
+            char c = query.charAt(i);
+            if (c < x.c) {
+                x = x.left;
+            } else if (c > x.c) {
+                x = x.right;
+            } else {
+                i++;
+                if (x.val != null) {
+                    length = i;
+                }
+                x = x.mid;
+            }
+        }
+        return query.substring(0, length);
+    }
 }
