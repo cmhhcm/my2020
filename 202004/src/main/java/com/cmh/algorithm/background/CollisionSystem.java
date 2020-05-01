@@ -65,7 +65,7 @@ public class CollisionSystem {
     }
 
     /**
-     * 基于事件模拟互相碰撞的例子(主循环)
+     * 基于事件模拟互相碰撞的粒子(主循环)
      */
     public void simulate(double limit, double Hz) {
         pq = new MinPQ<>();
