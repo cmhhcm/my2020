@@ -48,9 +48,13 @@ public class ExecutorTest {
         }
     }
 
+    public static void main(String[] args) {
+        testScheduledThreadPool();
+//        testScheduleThreadPool2();
+    }
 
     @Test
-    public void testScheduledThreadPool() {
+    public static void testScheduledThreadPool() {
         ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(5);
         scheduledExecutorService.schedule(new Runnable() {
             @Override
@@ -62,7 +66,7 @@ public class ExecutorTest {
 
 
     @Test
-    public void testScheduleThreadPool2() {
+    public static void testScheduleThreadPool2() {
         ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(2);
         scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
             @Override
@@ -72,5 +76,13 @@ public class ExecutorTest {
         }, 1, 2, TimeUnit.SECONDS);
     }
 
+    /**
+     * 总结：
+     * 多线程：
+     * Executors.newCachedThreadPool();
+     *  Executors.newFixedThreadPool(3);
+     *  Executors.newScheduledThreadPool(5);
+     *  Executors.newScheduledThreadPool(2);
+     */
 
 }

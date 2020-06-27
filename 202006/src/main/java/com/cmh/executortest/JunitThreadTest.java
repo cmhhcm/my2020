@@ -13,7 +13,6 @@ public class JunitThreadTest {
         new Thread(new Runnable() {
             @Override
             public void run() {
-
                 try {
                     Thread.sleep(2000);//子线程睡眠2s
                 } catch (InterruptedException e) {
